@@ -6,7 +6,15 @@ const getTodoForm = () => {
 }
 
 export default (targetElement, { addItem }) => {
-  const newNode = targetElement.cloneNode(false);
+  const newNode = targetElement.cloneNode(true);
   newNode.innerHTML = getTodoForm();
+
+  const input = newNode.querySelector('input');
+  const button = newNode.querySelector('button');
+
+  button.addEventListener('click', () => {
+    addItem(input.value);
+  });
+
   return newNode
 };

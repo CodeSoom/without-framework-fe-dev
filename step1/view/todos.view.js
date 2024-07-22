@@ -9,6 +9,7 @@ const getTodos = ({ todos }) => {
               type="checkbox"
             />
             <span ${completed ? 'class="completed"' : ''}>${text}</span>
+            <button class="update-button">수정</button>
             <button class="delete-button">삭제</button>
           `: ''}
           ${editing ? `
